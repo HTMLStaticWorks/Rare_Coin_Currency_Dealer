@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,17 +9,25 @@
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <header>
         <div class="container flex justify-between align-center">
+            <button id="menu-btn" class="hamburger" aria-label="Toggle Menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
             <div class="logo-container">
                 <a href="index.html">
                     <img src="assets/logo.svg" alt="RareCoin Logo" width="150">
                 </a>
             </div>
-            
+
             <nav>
                 <ul class="nav-links flex align-center">
                     <li><a href="index.html">Home</a></li>
@@ -27,128 +36,265 @@
                     <li><a href="about.html">About</a></li>
                     <li><a href="grading.html" class="active">Authentication</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li><a href="auth.html" class="btn btn-outline" style="padding: 8px 16px;">Member</a></li>
+                    <li><a href="auth.html" class="btn btn-primary" style="padding: 8px 16px;">Member</a></li>
                     <li class="flex align-center gap-10">
                         <button id="theme-toggle" class="theme-toggle-btn">☀️</button>
-                        <button id="rtl-toggle" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.7rem;">RTL</button>
+                        <button id="rtl-toggle" class="btn btn-primary"
+                            style="padding: 8px 16px; font-size: 0.7rem;">RTL</button>
                     </li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main style="padding-top: 120px;">
-        <section class="section-padding">
+    <main>
+        <section class="grading-hero">
+            <div class="grading-hero-content">
+                <h4 class="serif" style="color: var(--primary-color); letter-spacing: 4px; margin-bottom: 20px;">
+                    PRECISION & TRUST</h4>
+                <h1 class="serif">The Gold Standard for Authentication</h1>
+                <p>Ensuring the integrity, value, and historical significance of your most prized numismatic assets
+                    through world-class grading services.</p>
+                <div class="flex gap-20 justify-center">
+                    <a href="#process" class="btn btn-primary">Our Process</a>
+                    <a href="contact.html" class="btn btn-outline">Consult an Expert</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding"
+            style="background: var(--bg-color); border-bottom: 1px solid var(--border-color);">
+            <div class="container">
+                <div class="trust-badges">
+                    <div class="badge-item">PCGS</div>
+                    <div class="badge-item">NGC</div>
+                    <div class="badge-item">PMG</div>
+                    <div class="badge-item">CAC</div>
+                    <div class="badge-item">PNG</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="process" class="section-padding" style="background: var(--surface-color);">
             <div class="container">
                 <div class="text-center" style="margin-bottom: 60px;">
-                    <h1 style="font-size: 3.5rem;">The Gold Standard for Grading</h1>
-                    <p style="color: var(--text-muted); max-width: 800px; margin: 0 auto;">Understanding how rare assets are evaluated and protected.</p>
+                    <h2 class="serif" style="font-size: 3rem;">The Grading Journey</h2>
+                    <p style="color: #ffffff;">A meticulous five-step process to certify your collection.</p>
                 </div>
-                
-                <div class="product-grid" style="grid-template-columns: repeat(2, 1fr);">
-                    <div class="info-card">
-                        <h2 style="margin-bottom: 20px;">PCGS Authentication</h2>
-                        <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 20px;">Professional Coin Grading Service (PCGS) is the industry's most respected third-party grading service. We exclusively handle PCGS certified items for high-value American coinage.</p>
-                        <ul style="color: var(--text-muted); list-style: inside disc; line-height: 1.8;">
-                            <li>Guaranteed authenticity</li>
-                            <li>Standardized grading scale (1-70)</li>
-                            <li>Tamp-evident sonic-sealed holders</li>
+
+                <div class="process-grid">
+                    <div class="process-step">
+                        <div class="process-icon-wrapper">📥</div>
+                        <h4 class="serif">1. Intake</h4>
+                        <p>Secure reception and inventory logging of assets.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-icon-wrapper">🔍</div>
+                        <h4 class="serif">2. Verify</h4>
+                        <p>High-resolution imaging and counterfeit detection.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-icon-wrapper">⚖️</div>
+                        <h4 class="serif">3. Grade</h4>
+                        <p>Independent evaluation by three master numismatists.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-icon-wrapper">🛡️</div>
+                        <h4 class="serif">4. Seal</h4>
+                        <p>Encapsulation in tamper-evident sonic-sealed holders.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-icon-wrapper">🚚</div>
+                        <h4 class="serif">5. Return</h4>
+                        <p>Insured expedited delivery to your doorstep.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: 80px;">
+                    <h2 class="serif" style="font-size: 3rem;">Specialized Services</h2>
+                    <p style="color: #ffffff; max-width: 800px; margin: 0 auto;">Comprehensive solutions for every
+                        aspect of your collection's lifecycle.</p>
+                </div>
+
+                <div class="product-grid grading-services-grid">
+                    <div class="info-card enhanced glass-card">
+                        <div class="card-icon">🏛️</div>
+                        <h3 class="serif" style="margin-bottom: 20px;">PCGS Authentication</h3>
+                        <p style="color: #ffffff; line-height: 1.8; margin-bottom: 20px;">Professional Coin Grading
+                            Service (PCGS) is the industry's most respected third-party grading service. We exclusively
+                            handle PCGS certified items for high-value American coinage.</p>
+                        <ul style="color: #ffffff; list-style: none; line-height: 2;">
+                            <li><span style="color: var(--primary-color);">✔</span> Guaranteed authenticity</li>
+                            <li><span style="color: var(--primary-color);">✔</span> Standardized grading scale (1-70)
+                            </li>
+                            <li><span style="color: var(--primary-color);">✔</span> Tamp-evident sonic-sealed holders
+                            </li>
                         </ul>
                     </div>
-                    <div class="info-card">
-                        <h2 style="margin-bottom: 20px;">NGC Certification</h2>
-                        <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 20px;">Numismatic Guaranty Company (NGC) provides world-class grading for both coins and paper currency. Their expertise is unmatched in world and ancient numismatics.</p>
-                        <ul style="color: var(--text-muted); list-style: inside disc; line-height: 1.8;">
-                            <li>Expert visual analysis</li>
-                            <li>Secure conservation services</li>
-                            <li>Online certification lookup</li>
+                    <div class="info-card enhanced glass-card">
+                        <div class="card-icon">💎</div>
+                        <h3 class="serif" style="margin-bottom: 20px;">NGC Certification</h3>
+                        <p style="color: #ffffff; line-height: 1.8; margin-bottom: 20px;">Numismatic Guaranty Company
+                            (NGC) provides world-class grading for both coins and paper currency. Their expertise is
+                            unmatched in world and ancient numismatics.</p>
+                        <ul style="color: #ffffff; list-style: none; line-height: 2;">
+                            <li><span style="color: var(--primary-color);">✔</span> Expert visual analysis</li>
+                            <li><span style="color: var(--primary-color);">✔</span> Secure conservation services</li>
+                            <li><span style="color: var(--primary-color);">✔</span> Online certification lookup</li>
                         </ul>
                     </div>
-                    <div class="info-card">
-                        <h2 style="margin-bottom: 20px;">PMG Paper Money</h2>
-                        <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 20px;">Paper Money Guaranty (PMG) is the leader in third-party paper money grading. We ensure all rare banknotes are PMG certified for maximum protection.</p>
-                        <ul style="color: var(--text-muted); list-style: inside disc; line-height: 1.8;">
-                            <li>Note holder longevity</li>
-                            <li>Counterfeit detection</li>
-                            <li>Comprehensive grading</li>
+                    <div class="info-card enhanced glass-card">
+                        <div class="card-icon">💵</div>
+                        <h3 class="serif" style="margin-bottom: 20px;">PMG Paper Money</h3>
+                        <p style="color: #ffffff; line-height: 1.8; margin-bottom: 20px;">Paper Money Guaranty (PMG) is
+                            the leader in third-party paper money grading. We ensure all rare banknotes are PMG
+                            certified for maximum protection.</p>
+                        <ul style="color: #ffffff; list-style: none; line-height: 2;">
+                            <li><span style="color: var(--primary-color);">✔</span> Note holder longevity</li>
+                            <li><span style="color: var(--primary-color);">✔</span> Counterfeit detection</li>
+                            <li><span style="color: var(--primary-color);">✔</span> Comprehensive grading</li>
                         </ul>
                     </div>
-                    <div class="info-card">
-                        <h2 style="margin-bottom: 20px;">Ancient Coin Evaluation</h2>
-                        <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 20px;">Specialized evaluation for Greek, Roman, and Byzantine coinage. We verify provenance and historical context for every ancient asset.</p>
-                        <ul style="color: var(--text-muted); list-style: inside disc; line-height: 1.8;">
-                            <li>Historical verification</li>
-                            <li>Grading by strike/surface</li>
-                            <li>Rarity assessment</li>
+                    <div class="info-card enhanced glass-card">
+                        <div class="card-icon">🏺</div>
+                        <h3 class="serif" style="margin-bottom: 20px;">Ancient Evaluation</h3>
+                        <p style="color: #ffffff; line-height: 1.8; margin-bottom: 20px;">Specialized evaluation for
+                            Greek, Roman, and Byzantine coinage. We verify provenance and historical context for every
+                            ancient asset.</p>
+                        <ul style="color: #ffffff; list-style: none; line-height: 2;">
+                            <li><span style="color: var(--primary-color);">✔</span> Historical verification</li>
+                            <li><span style="color: var(--primary-color);">✔</span> Grading by strike/surface</li>
+                            <li><span style="color: var(--primary-color);">✔</span> Rarity assessment</li>
                         </ul>
                     </div>
-                    <div class="info-card">
-                        <h2 style="margin-bottom: 20px;">Conservation Services</h2>
-                        <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 20px;">Professional stabilization and cleaning to preserve the long-term value of your collection without damaging the surface.</p>
-                        <ul style="color: var(--text-muted); list-style: inside disc; line-height: 1.8;">
-                            <li>PVC removal</li>
-                            <li>Environmental protection</li>
-                            <li>Museum-quality care</li>
+                    <div class="info-card enhanced glass-card">
+                        <div class="card-icon">✨</div>
+                        <h3 class="serif" style="margin-bottom: 20px;">Conservation</h3>
+                        <p style="color: #ffffff; line-height: 1.8; margin-bottom: 20px;">Professional stabilization and
+                            cleaning to preserve the long-term value of your collection without damaging the surface.
+                        </p>
+                        <ul style="color: #ffffff; list-style: none; line-height: 2;">
+                            <li><span style="color: var(--primary-color);">✔</span> PVC removal</li>
+                            <li><span style="color: var(--primary-color);">✔</span> Environmental protection</li>
+                            <li><span style="color: var(--primary-color);">✔</span> Museum-quality care</li>
                         </ul>
                     </div>
-                    <div class="info-card">
-                        <h2 style="margin-bottom: 20px;">Provenance Research</h2>
-                        <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 20px;">Tracing the lineage of your assets back to their original discovery or auction appearances to build a robust pedigree.</p>
-                        <ul style="color: var(--text-muted); list-style: inside disc; line-height: 1.8;">
-                            <li>Auction record search</li>
-                            <li>Pedigree documentation</li>
-                            <li>Historical tracing</li>
+                    <div class="info-card enhanced glass-card">
+                        <div class="card-icon">📜</div>
+                        <h3 class="serif" style="margin-bottom: 20px;">Provenance Research</h3>
+                        <p style="color: #ffffff; line-height: 1.8; margin-bottom: 20px;">Tracing the lineage of your
+                            assets back to their original discovery or auction appearances to build a robust pedigree.
+                        </p>
+                        <ul style="color: #ffffff; list-style: none; line-height: 2;">
+                            <li><span style="color: var(--primary-color);">✔</span> Auction record search</li>
+                            <li><span style="color: var(--primary-color);">✔</span> Pedigree documentation</li>
+                            <li><span style="color: var(--primary-color);">✔</span> Historical tracing</li>
                         </ul>
                     </div>
-                    <div class="info-card">
-                        <h2 style="margin-bottom: 20px;">Insurance Appraisal</h2>
-                        <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 20px;">Certified valuations for high-value collections to ensure proper insurance coverage and replacement value protection.</p>
-                        <ul style="color: var(--text-muted); list-style: inside disc; line-height: 1.8;">
-                            <li>Full market analysis</li>
-                            <li>Replacement cost evaluation</li>
-                            <li>Formal documentation</li>
+                    <div class="info-card enhanced glass-card">
+                        <div class="card-icon">📋</div>
+                        <h3 class="serif" style="margin-bottom: 20px;">Insurance Appraisal</h3>
+                        <p style="color: #ffffff; line-height: 1.8; margin-bottom: 20px;">Certified valuations for
+                            high-value collections to ensure proper insurance coverage and replacement value protection.
+                        </p>
+                        <ul style="color: #ffffff; list-style: none; line-height: 2;">
+                            <li><span style="color: var(--primary-color);">✔</span> Full market analysis</li>
+                            <li><span style="color: var(--primary-color);">✔</span> Replacement cost evaluation</li>
+                            <li><span style="color: var(--primary-color);">✔</span> Formal documentation</li>
                         </ul>
                     </div>
-                    <div class="info-card">
-                        <h2 style="margin-bottom: 20px;">Secure Vaulting</h2>
-                        <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 20px;">Off-site specialized storage for your most valuable assets with 24/7 security and climate control.</p>
-                        <ul style="color: var(--text-muted); list-style: inside disc; line-height: 1.8;">
-                            <li>Fully insured storage</li>
-                            <li>Climate-neutral environment</li>
-                            <li>Specialized security</li>
+                    <div class="info-card enhanced glass-card">
+                        <div class="card-icon">🔒</div>
+                        <h3 class="serif" style="margin-bottom: 20px;">Secure Vaulting</h3>
+                        <p style="color: #ffffff; line-height: 1.8; margin-bottom: 20px;">Off-site specialized storage
+                            for your most valuable assets with 24/7 security and climate control.</p>
+                        <ul style="color: #ffffff; list-style: none; line-height: 2;">
+                            <li><span style="color: var(--primary-color);">✔</span> Fully insured storage</li>
+                            <li><span style="color: var(--primary-color);">✔</span> Climate-neutral environment</li>
+                            <li><span style="color: var(--primary-color);">✔</span> Specialized security</li>
                         </ul>
                     </div>
-                    <div class="info-card">
-                        <h2 style="margin-bottom: 20px;">Auction Representation</h2>
-                        <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 20px;">Anonymized representation at major global auctions to secure rare pieces for your private collection.</p>
-                        <ul style="color: var(--text-muted); list-style: inside disc; line-height: 1.8;">
-                            <li>Professional bidding</li>
-                            <li>Market strategy</li>
-                            <li>Confidentiality</li>
+                    <div class="info-card enhanced glass-card">
+                        <div class="card-icon">🔨</div>
+                        <h3 class="serif" style="margin-bottom: 20px;">Auction Representation</h3>
+                        <p style="color: #ffffff; line-height: 1.8; margin-bottom: 20px;">Anonymized representation at
+                            major global auctions to secure rare pieces for your private collection.</p>
+                        <ul style="color: #ffffff; list-style: none; line-height: 2;">
+                            <li><span style="color: var(--primary-color);">✔</span> Professional bidding</li>
+                            <li><span style="color: var(--primary-color);">✔</span> Market strategy</li>
+                            <li><span style="color: var(--primary-color);">✔</span> Confidentiality</li>
                         </ul>
                     </div>
-                    <div class="info-card">
-                        <h2 style="margin-bottom: 20px;">Private Treaty Sales</h2>
-                        <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 20px;">Facilitating discreet, high-value transfers between high-net-worth collectors outside of public auctions.</p>
-                        <ul style="color: var(--text-muted); list-style: inside disc; line-height: 1.8;">
-                            <li>Complete discretion</li>
-                            <li>Targeted matching</li>
-                            <li>Secured escrow</li>
+                    <div class="info-card enhanced glass-card">
+                        <div class="card-icon">🤝</div>
+                        <h3 class="serif" style="margin-bottom: 20px;">Private Treaty Sales</h3>
+                        <p style="color: #ffffff; line-height: 1.8; margin-bottom: 20px;">Facilitating discreet,
+                            high-value transfers between high-net-worth collectors outside of public auctions.</p>
+                        <ul style="color: #ffffff; list-style: none; line-height: 2;">
+                            <li><span style="color: var(--primary-color);">✔</span> Complete discretion</li>
+                            <li><span style="color: var(--primary-color);">✔</span> Targeted matching</li>
+                            <li><span style="color: var(--primary-color);">✔</span> Secured escrow</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
-        
+
         <section class="section-padding" style="background: var(--surface-light);">
             <div class="container">
-                <h2 class="text-center" style="margin-bottom: 50px;">The Grading Scale</h2>
-                <div style="background: var(--bg-color); padding: 40px; border-radius: 12px; border: 1px solid var(--border-color);">
-                    <div class="spec-item"><span class="serif" style="color: var(--primary-color);">MS 60-70 (Mint State)</span><span style="color: var(--text-muted);">A coin that has never been in circulation.</span></div>
-                    <div class="spec-item"><span class="serif" style="color: var(--primary-color);">AU 50-58 (About Uncirculated)</span><span style="color: var(--text-muted);">Slight wear on the highest design points.</span></div>
-                    <div class="spec-item"><span class="serif" style="color: var(--primary-color);">XF 40-45 (Extremely Fine)</span><span style="color: var(--text-muted);">Light wear over high design areas.</span></div>
-                    <div class="spec-item"><span class="serif" style="color: var(--primary-color);">VF 20-35 (Very Fine)</span><span style="color: var(--text-muted);">Moderate even wear throughout.</span></div>
+                <div class="text-center" style="margin-bottom: 50px;">
+                    <h2 class="serif" style="font-size: 3rem;">The Sheldon Scale</h2>
+                    <p style="color: #ffffff;">The industry standard for grading commercial and rare assets.</p>
                 </div>
+
+                <div class="table-container" style="max-width: 900px; margin: 0 auto;">
+                    <div class="table-responsive">
+                        <table class="grading-table">
+                            <tr>
+                                <td>MS 60-70</td>
+                                <td><strong>Mint State</strong> — A coin that has never been in circulation, showing full
+                                    luster. MS-70 is absolute perfection.</td>
+                            </tr>
+                            <tr>
+                                <td>AU 50-58</td>
+                                <td><strong>About Uncirculated</strong> — Slight wear on the highest design points, retains
+                                    most original surface luster.</td>
+                            </tr>
+                            <tr>
+                                <td>XF 40-45</td>
+                                <td><strong>Extremely Fine</strong> — Light wear over high design areas; all detail remains
+                                    sharp and clearly visible.</td>
+                            </tr>
+                            <tr>
+                                <td>VF 20-35</td>
+                                <td><strong>Very Fine</strong> — Moderate even wear throughout the design; major features
+                                    remain well-defined but flattened.</td>
+                            </tr>
+                            <tr>
+                                <td>F 12-15</td>
+                                <td><strong>Fine</strong> — Deep wear; most design details are worn flat, but the major
+                                    devices are clear.</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-banner text-center">
+            <div class="container">
+                <h2 class="serif" style="font-size: 3.5rem; margin-bottom: 20px; color: #fff;">Ready to Protect Your
+                    Legacy?</h2>
+                <p
+                    style="color: var(--secondary-color); font-size: 1.2rem; max-width: 700px; margin: 0 auto 40px; opacity: 0.9;">
+                    Join thousands of collectors who trust us with their most valuable investments. Get a free appraisal
+                    estimate today.</p>
+                <a href="contact.html" class="btn btn-primary" style="padding: 15px 40px; font-size: 1rem;">Book a
+                    Consultation</a>
             </div>
         </section>
     </main>
@@ -158,11 +304,27 @@
             <div class="footer-grid">
                 <div class="footer-info">
                     <img src="assets/logo.svg" alt="RareCoin Logo" width="120" style="margin-bottom: 15px;">
-                    <p style="color: #f5e6d3; font-size: 0.85rem; opacity: 0.8; line-height: 1.5;">The world's premier destination for museum-quality numismatic investments.</p>
+                    <p style="color: #f5e6d3; font-size: 0.85rem; opacity: 0.8; line-height: 1.5;">The world's premier
+                        destination for museum-quality numismatic investments.</p>
                     <div class="social-links">
-                        <a href="#" title="Twitter"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg></a>
-                        <a href="#" title="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-                        <a href="#" title="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                        <a href="#" title="Twitter"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+                            </svg></a>
+                        <a href="#" title="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                            </svg></a>
+                        <a href="#" title="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                                <rect x="2" y="9" width="4" height="12" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg></a>
                     </div>
                 </div>
                 <div class="footer-links">
@@ -186,10 +348,13 @@
                 </div>
                 <div class="footer-links">
                     <h4>Newsletter</h4>
-                    <p style="color: #f5e6d3; font-size: 0.75rem; opacity: 0.7; margin-bottom: 12px;">Exclusive early access to acquisitions.</p>
+                    <p style="color: #f5e6d3; font-size: 0.75rem; opacity: 0.7; margin-bottom: 12px;">Exclusive early
+                        access to acquisitions.</p>
                     <div class="flex">
-                        <input type="email" placeholder="Email" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(212, 175, 55, 0.3); padding: 8px; color: #fff; border-radius: 4px 0 0 4px; width: 100%; font-size: 0.8rem;">
-                        <button class="btn btn-primary" style="border-radius: 0 4px 4px 0; padding: 8px 15px; font-size: 0.8rem;">Join</button>
+                        <input type="email" placeholder="Email"
+                            style="background: rgba(255,255,255,0.05); border: 1px solid rgba(212, 175, 55, 0.3); padding: 8px; color: #fff; border-radius: 4px 0 0 4px; width: 100%; font-size: 0.8rem;">
+                        <button class="btn btn-primary"
+                            style="border-radius: 0 4px 4px 0; padding: 8px 15px; font-size: 0.8rem;">Join</button>
                     </div>
                 </div>
             </div>
@@ -200,9 +365,15 @@
     </footer>
 
     <button id="back-to-top" title="Back to Top">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 15l-6-6-6 6" />
+        </svg>
     </button>
 
     <script src="js/main.js"></script>
 </body>
+
+</html>
+
 </html>
