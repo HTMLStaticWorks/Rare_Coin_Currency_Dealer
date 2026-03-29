@@ -142,5 +142,23 @@ const products = [
             composition: "95% Copper, 5% Tin/Zinc",
             gradingService: "PCGS"
         }
+    },
+    {
+        id: 9,
+        name: "1861 $10 Demand Note",
+        category: "Banknotes",
+        grade: "PMG Choice Fine 15",
+        cert: "Cert #0028471",
+        price: "$12,800.00",
+        image: "assets/1861 10 demand Note.jfif",
+        badge: "Museum Quality",
+        description: "A fantastic example of one of the first notes issued by the Federal Government. These 'Demand Notes' helped finance the early stages of the Civil War.",
+        specs: {
+            year: "1861",
+            mint: "Washington D.C.",
+            denomination: "$10.00",
+            composition: "Paper",
+            gradingService: "PMG"
+        }
     }
 ];
