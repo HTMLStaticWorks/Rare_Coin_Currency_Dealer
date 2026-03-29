@@ -444,13 +444,16 @@ h3 {
 
 /* Auction & Product Grids */
 .auction-grid,
-.product-grid {
+.product-grid,
+.trust-grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 40px;
     margin: 0 auto;
     max-width: 1200px;
 }
+
+
 
 .auction-card {
     background: var(--surface-color);
@@ -615,6 +618,37 @@ h3 {
     align-items: start;
 }
 
+@media (max-width: 992px) {
+    .product-detail-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 650px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .product-gallery {
+        position: static;
+        margin-bottom: 0;
+    }
+
+    .product-meta {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-meta h1 {
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+    }
+    
+    .grading-badge {
+        justify-content: center;
+        margin-inline: auto;
+    }
+}
+
 .centered-grid {
     grid-template-columns: 1fr !important;
     text-align: center;
@@ -689,6 +723,19 @@ h3 {
     /* Adapts to RTL */
 }
 
+@media (max-width: 576px) {
+    .grading-badge {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+        width: 100%;
+    }
+
+    .grading-badge span:nth-child(2) {
+        display: none;
+    }
+}
+
 .price-tag {
     font-size: 2.5rem;
     color: var(--primary-color);
@@ -698,6 +745,7 @@ h3 {
 
 .spec-list {
     margin-bottom: 40px;
+    width: 100%;
 }
 
 .spec-item {
@@ -706,6 +754,19 @@ h3 {
     padding: 12px 0;
     border-block-end: 1px solid var(--border-color);
     /* Logical border */
+}
+
+@media (max-width: 576px) {
+    .spec-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .price-tag {
+        font-size: 2rem;
+        margin-bottom: 25px;
+    }
 }
 
 .spec-label {
@@ -766,10 +827,11 @@ h3 {
 /* Category Quick Links (index2.html) */
 .category-quick-links {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     margin-top: 50px;
 }
+
 
 .quick-link-card {
     background: rgba(212, 175, 55, 0.1);
@@ -857,10 +919,11 @@ h3 {
 /* Values Section */
 .values-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
     margin-top: 50px;
 }
+
 
 @media (max-width: 768px) {
     .values-grid {
@@ -1017,10 +1080,11 @@ footer {
 /* Museum Gallery Section */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
     margin-top: 50px;
 }
+
 
 .gallery-item {
     position: relative;
@@ -1282,8 +1346,9 @@ footer {
     /* Upcoming Rarities & Portfolios Grid fix */
     .upcoming-rarities .flex.gap-40,
     .investment-portfolios .flex.gap-40 {
-        display: grid !important;
-        grid-template-columns: 1fr !important;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
         gap: 30px;
     }
 
@@ -1435,6 +1500,14 @@ footer {
     opacity: 0.8;
 }
 
+@media (max-width: 768px) {
+    main .auth-options {
+        justify-content: space-evenly !important;
+        flex-wrap: wrap;
+        gap: 15px;
+        width: 100%;
+    }
+}
 
 .auth-form {
     display: none;
@@ -1560,16 +1633,41 @@ footer {
 /* Consignment Section */
 .consignment-steps {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+}/* Trust Section Cards */
+.trust-card {
+    background: var(--surface-color);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
+
+.trust-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.trust-icon {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 .portfolio-card {
     background: var(--surface-color);
     padding: 40px;
     border: 1px solid var(--primary-color);
     border-radius: 12px;
-    width: 350px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 380px;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -1628,6 +1726,10 @@ footer {
     border-top: 3px solid var(--primary-color);
     position: relative;
     transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .step-card:hover {
@@ -1648,12 +1750,16 @@ footer {
 /* Research Library */
 .library-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 25px;
 }
 
+
 .resource-card {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     gap: 20px;
     background: var(--surface-light);
     padding: 24px;
@@ -1769,10 +1875,11 @@ footer {
 /* Process Journey */
 .process-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     margin-top: 40px;
 }
+
 
 .process-step {
     text-align: center;
@@ -1824,6 +1931,13 @@ footer {
 }
 
 /* Enhanced Info Cards */
+.info-card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .info-card.enhanced {
     padding-top: 60px !important;
     position: relative;
@@ -2435,6 +2549,7 @@ footer {
     grid-template-columns: repeat(2, 1fr);
     gap: 60px 40px;
 }
+
 
 .table-responsive {
     width: 100%;

@@ -80,109 +80,8 @@
                     </div>
                 </div>
 
-                <div class="product-grid">
-                    <!-- Product Card 1 -->
-                    <div class="product-card">
-                        <span class="product-badge">Top Grade</span>
-                        <img src="assets/1909-S VDB Lincoln Cent.jfif" alt="1909-S VDB Lincoln Cent">
-                        <div class="product-info">
-                            <h3>1909-S VDB Lincoln Cent</h3>
-                            <p style="color: var(--text-muted); margin-bottom: 10px;">PCGS MS-66 Red</p>
-                            <div class="product-footer">
-                                <span class="product-price">$4,250.00</span>
-                                <a href="product.html" class="btn btn-outline btn-full">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product Card 2 -->
-                    <div class="product-card">
-                        <span class="product-badge">Rare</span>
-                        <img src="assets/1921 High Relief Peace Dollar.jfif" alt="1921 High Relief Peace Dollar">
-                        <div class="product-info">
-                            <h3>1921 Peace Dollar</h3>
-                            <p style="color: var(--text-muted); margin-bottom: 10px;">NGC MS-64 High Relief</p>
-                            <div class="product-footer">
-                                <span class="product-price">$2,100.00</span>
-                                <a href="product.html" class="btn btn-outline btn-full">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product Card 3 -->
-                    <div class="product-card">
-                        <img src="assets/1889-CC Morgan Dollar.jfif" alt="1889-CC Morgan Dollar">
-                        <div class="product-info">
-                            <h3>1889-CC Morgan Dollar</h3>
-                            <p style="color: var(--text-muted); margin-bottom: 10px;">NGC AU-58 Key Date</p>
-                            <div class="product-footer">
-                                <span class="product-price">$18,500.00</span>
-                                <a href="product.html" class="btn btn-outline btn-full">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product Card 4 -->
-                    <div class="product-card">
-                        <span class="product-badge">New Arrival</span>
-                        <img src="assets/1916-D Mercury Dime.jfif" alt="1916-D Mercury Dime">
-                        <div class="product-info">
-                            <h3>1916-D Mercury Dime</h3>
-                            <p style="color: var(--text-muted); margin-bottom: 10px;">PCGS MS-64 Full Bands</p>
-                            <div class="product-footer">
-                                <span class="product-price">$32,000.00</span>
-                                <a href="product.html" class="btn btn-outline btn-full">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product Card 5 (NEW) -->
-                    <div class="product-card">
-                        <span class="product-badge">Investment Grade</span>
-                        <img src="assets/1893-S Morgan Dollar.jfif" alt="1893-S Morgan Dollar">
-                        <div class="product-info">
-                            <h3>1893-S Morgan Dollar</h3>
-                            <p style="color: var(--text-muted); margin-bottom: 10px;">PCGS VF-30 Rare Key Date</p>
-                            <div class="product-footer">
-                                <span class="product-price">$5,750.00</span>
-                                <a href="product.html" class="btn btn-outline btn-full">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product Card 6 (NEW) -->
-                    <div class="product-card">
-                        <img src="assets/1932 Saint-Gaudens Double Eagle.jfif" alt="1932 Saint-Gaudens Double Eagle">
-                        <div class="product-info">
-                            <h3>1932 St. Gaudens $20</h3>
-                            <p style="color: var(--text-muted); margin-bottom: 10px;">NGC MS-63 Lusterous Gold</p>
-                            <div class="product-footer">
-                                <span class="product-price">$45,000.00</span>
-                                <a href="product.html" class="btn btn-outline btn-full">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product Card 7 (NEW) -->
-                    <div class="product-card">
-                        <span class="product-badge">Heritage</span>
-                        <img src="assets/Ancient Attic Owl.jfif" alt="Athens Owl Tetradrachm">
-                        <div class="product-info">
-                            <h3>Athens Owl Tetradrachm</h3>
-                            <p style="color: var(--text-muted); margin-bottom: 10px;">Ch XF Ancient Silver Coin</p>
-                            <div class="product-footer">
-                                <span class="product-price">$2,850.00</span>
-                                <a href="product.html" class="btn btn-outline btn-full">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product Card 8 (NEW) -->
-                    <div class="product-card">
-                        <span class="product-badge">Collectors Choice</span>
-                        <img src="assets/1877 Indian Head Cent.jfif" alt="1877 Indian Head Cent">
-                        <div class="product-info">
-                            <h3>1877 Indian Head Cent</h3>
-                            <p style="color: var(--text-muted); margin-bottom: 10px;">PCGS AU-55 Key Date Cent</p>
-                            <div class="product-footer">
-                                <span class="product-price">$3,400.00</span>
-                                <a href="product.html" class="btn btn-outline btn-full">View Details</a>
-                            </div>
-                        </div>
-                    </div>
+                <div class="product-grid" id="product-grid">
+                    <!-- Products will be loaded dynamically from js/products.js -->
                 </div>
             </div>
         </section>
@@ -351,7 +250,29 @@
         </svg>
     </button>
 
+    <script src="js/products.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const productGrid = document.getElementById('product-grid');
+            if (productGrid && typeof products !== 'undefined') {
+                productGrid.innerHTML = products.map(product => `
+                    <div class="product-card">
+                        ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ''}
+                        <img src="${product.image}" alt="${product.name}">
+                        <div class="product-info">
+                            <h3>${product.name}</h3>
+                            <p style="color: var(--text-muted); margin-bottom: 10px;">${product.grade}</p>
+                            <div class="product-footer">
+                                <span class="product-price">${product.price}</span>
+                                <a href="product.html?id=${product.id}" class="btn btn-outline btn-full">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        });
+    </script>
 </body>
 
 </html>
