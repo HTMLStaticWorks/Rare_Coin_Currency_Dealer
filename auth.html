@@ -15,7 +15,8 @@
 
 <body class="auth-page-body">
 
-    <main style="padding: 60px 0; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    <main
+        style="padding: 60px 0; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;">
         <div class="auth-logo">
             <a href="index.html">
                 <img src="assets/logo.svg" alt="RareCoin Logo">
@@ -23,82 +24,131 @@
         </div>
 
         <div class="auth-container">
-                <!-- Login Form -->
-                <div id="login-form" class="auth-form active">
-                    <form>
-                        <div class="form-group">
-                            <label>Username or Email</label>
-                            <input type="text" class="form-control" placeholder="numismatist_01">
+            <!-- Login Form -->
+            <div id="login-form" class="auth-form active">
+                <form>
+                    <div class="about-stats flex justify-center">
+                        <h2>
+                            Access My Account
+                        </h2>
+                    </div>
+                    <div class="form-group">
+                        <label>Username or Email</label>
+                        <input type="text" class="form-control" placeholder="numismatist_01">
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control" placeholder="••••••••">
+                    </div>
+                    <div class="flex justify-between align-center" style="margin-bottom: 25px;">
+                        <label style="font-size: 0.8rem; color: var(--text-muted); cursor: pointer;"><input
+                                type="checkbox"> Remember me</label>
+                        <a href="#" style="font-size: 0.8rem; color: var(--primary-color);">Forgot password?</a>
+                    </div>
+                    <button type="button" class="btn btn-primary" style="width: 100%; padding: 15px;">Access
+                        Vault</button>
+                    <div class="social-auth">
+                        <p>Or continue with</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon" title="Google">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                        fill="#4285F4" />
+                                    <path
+                                        d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-1.02.68-2.33 1.09-3.71 1.09-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                        fill="#34A853" />
+                                    <path
+                                        d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                        fill="#FBBC05" />
+                                    <path
+                                        d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                        fill="#EA4335" />
+                                </svg>
+                            </a>
+                            <a href="#" class="social-icon" title="Facebook">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.312h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.324-1.325-1.324z"
+                                        fill="#1877F2" />
+                                </svg>
+                            </a>
                         </div>
-                        <div class="form-group">
-                            <label>Password</label>
-                            <input type="password" class="form-control" placeholder="••••••••">
-                        </div>
-                        <div class="flex justify-between align-center" style="margin-bottom: 25px;">
-                            <label style="font-size: 0.8rem; color: var(--text-muted); cursor: pointer;"><input
-                                    type="checkbox"> Remember me</label>
-                            <a href="#" style="font-size: 0.8rem; color: var(--primary-color);">Forgot password?</a>
-                        </div>
-                        <button type="button" class="btn btn-primary" style="width: 100%; padding: 15px;">Access Vault</button>
-                        <div class="social-auth">
-                            <p>Or continue with</p>
-                            <div class="social-icons">
-                                <a href="#" class="social-icon" title="Google">
-                                    <svg viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-1.02.68-2.33 1.09-3.71 1.09-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-                                </a>
-                                <a href="#" class="social-icon" title="Facebook">
-                                    <svg viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.312h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.324-1.325-1.324z" fill="#1877F2"/></svg>
-                                </a>
-                            </div>
-                        </div>
-                        <p style="margin-top: 25px; font-size: 0.9rem; color: var(--text-muted); text-align: center;">I'm new to this? <a href="#" class="auth-toggle-btn" data-target="signup-form">Create Account</a></p>
-                    </form>
-                </div>
-
-                <!-- Signup Form -->
-                <div id="signup-form" class="auth-form">
-                    <form>
-                        <div class="form-group">
-                            <label>Full Name</label>
-                            <input type="text" class="form-control" placeholder="Jane Doe">
-                        </div>
-                        <div class="form-group">
-                            <label>Email Address</label>
-                            <input type="email" class="form-control" placeholder="jane@example.com">
-                        </div>
-                        <div class="form-group">
-                            <label>Password</label>
-                            <input type="password" class="form-control" placeholder="••••••••">
-                        </div>
-                        <div class="form-group">
-                            <label>Confirm Password</label>
-                            <input type="password" class="form-control" placeholder="••••••••">
-                        </div>
-                        <button type="button" class="btn btn-primary" style="width: 100%; padding: 15px;">Create Account</button>
-                        <div class="social-auth">
-                            <p>Or join with</p>
-                            <div class="social-icons">
-                                <a href="#" class="social-icon" title="Google">
-                                    <svg viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-1.02.68-2.33 1.09-3.71 1.09-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-                                </a>
-                                <a href="#" class="social-icon" title="Facebook">
-                                    <svg viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.312h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.324-1.325-1.324z" fill="#1877F2"/></svg>
-                                </a>
-                            </div>
-                        </div>
-                        <p style="margin-top: 25px; font-size: 0.9rem; color: var(--text-muted); text-align: center;">Already have an account? <a href="#" class="auth-toggle-btn" data-target="login-form">Login</a></p>
-                    </form>
-                    <p style="margin-top: 20px; font-size: 0.8rem; color: var(--text-muted); text-align: center;">By
-                        joining, you agree to our <a href="policies.html" style="color: var(--primary-color);">Terms of
-                            Service</a>.</p>
-                </div>
+                    </div>
+                    <p style="margin-top: 25px; font-size: 0.9rem; color: var(--text-muted); text-align: center;">I'm
+                        new to this? <a href="#" class="auth-toggle-btn" data-target="signup-form">Create Account</a>
+                    </p>
+                </form>
             </div>
+
+            <!-- Signup Form -->
+            <div id="signup-form" class="auth-form">
+                <form>
+                    <div class="about-stats flex justify-center">
+                        <h2>Create Account</h2>
+                    </div>
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" class="form-control" placeholder="Jane Doe">
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" class="form-control" placeholder="jane@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control" placeholder="••••••••">
+                    </div>
+                    <div class="form-group">
+                        <label>Confirm Password</label>
+                        <input type="password" class="form-control" placeholder="••••••••">
+                    </div>
+                    <button type="button" class="btn btn-primary" style="width: 100%; padding: 15px;">Create
+                        Account</button>
+                    <div class="social-auth">
+                        <p>Or join with</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon" title="Google">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                        fill="#4285F4" />
+                                    <path
+                                        d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-1.02.68-2.33 1.09-3.71 1.09-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                        fill="#34A853" />
+                                    <path
+                                        d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                        fill="#FBBC05" />
+                                    <path
+                                        d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                        fill="#EA4335" />
+                                </svg>
+                            </a>
+                            <a href="#" class="social-icon" title="Facebook">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.312h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.324-1.325-1.324z"
+                                        fill="#1877F2" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <p style="margin-top: 25px; font-size: 0.9rem; color: var(--text-muted); text-align: center;">
+                        Already have an account? <a href="#" class="auth-toggle-btn" data-target="login-form">Login</a>
+                    </p>
+                </form>
+                <p style="margin-top: 20px; font-size: 0.8rem; color: var(--text-muted); text-align: center;">By
+                    joining, you agree to our <a href="policies.html" style="color: var(--primary-color);">Terms of
+                        Service</a>.</p>
+            </div>
+        </div>
         </div>
     </main>
 
     <div class="floating-controls">
         <button id="theme-toggle" class="control-btn" title="Toggle Theme">☀️</button>
-        <button id="rtl-toggle" class="control-btn" title="Toggle RTL" style="font-size: 0.8rem; font-weight: 700;">RTL</button>
+        <button id="rtl-toggle" class="control-btn" title="Toggle RTL"
+            style="font-size: 0.8rem; font-weight: 700;">RTL</button>
     </div>
 
     <script src="js/main.js"></script>
