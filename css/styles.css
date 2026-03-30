@@ -499,7 +499,8 @@ h3 {
 @media (max-width: 768px) {
 
     .auction-grid,
-    .product-grid {
+    .product-grid,
+    .trust-grid-container {
         grid-template-columns: 1fr;
         gap: 30px;
     }
@@ -939,6 +940,8 @@ h3 {
     transition: var(--transition);
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
     height: 100%;
 }
 
