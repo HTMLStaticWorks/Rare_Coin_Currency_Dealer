@@ -160,5 +160,23 @@ const products = [
             composition: "Paper",
             gradingService: "PMG"
         }
+    },
+    {
+        id: 10,
+        name: "1933 Saint-Gaudens Double Eagle",
+        category: "Gold Coins",
+        grade: "NGC MS-63 Lusterous Gold",
+        cert: "Cert #4459201",
+        price: "$45,000.00",
+        image: "assets/1933 Saint-Gaudens Double Eagle.jfif",
+        badge: "",
+        description: "A breathtaking example of Augustus Saint-Gaudens' masterpiece. This 1932 Double Eagle escaped the mass gold meltings of the 1930s and remains in superb mint condition.",
+        specs: {
+            year: "1932",
+            mint: "Philadelphia",
+            denomination: "$20.00",
+            composition: "90% Gold, 10% Copper",
+            gradingService: "NGC"
+        }
     }
 ];
