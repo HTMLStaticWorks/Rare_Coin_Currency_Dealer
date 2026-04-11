@@ -132,7 +132,7 @@ function initRTL() {
 function updateRTLButton(dir) {
     const rtlToggle = document.getElementById('rtl-toggle');
     if (rtlToggle) {
-        rtlToggle.textContent = dir === 'ltr' ? 'עברית / RTL' : 'English / LTR';
+        rtlToggle.textContent = dir === 'ltr' ? 'RTL' : 'LTR';
     }
 }
 

@@ -171,6 +171,10 @@ button {
     color: var(--bg-color);
 }
 
+[data-theme="light"] .btn-outline:hover {
+    color: #1a1208; /* Dark text in light mode hover */
+}
+
 .btn-outline:hover img {
     filter: brightness(0);
     /* Make gold icons dark on gold hover background */
@@ -643,7 +647,7 @@ h3 {
         font-size: 2.2rem;
         margin-bottom: 20px;
     }
-    
+
     .grading-badge {
         justify-content: center;
         margin-inline: auto;
@@ -1521,6 +1525,50 @@ footer {
     animation: fadeIn 0.5s ease forwards;
 }
 
+.auth-logo {
+    background: #0d0904;
+    /* Solid dark background to make gold pop */
+    padding: 25px 60px;
+    border-radius: 12px;
+    border: 2px solid var(--primary-color);
+    margin-bottom: 45px;
+    box-shadow: 0 15px 35px rgba(212, 175, 55, 0.4);
+    transition: var(--transition);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-logo:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 20px 45px rgba(212, 175, 55, 0.6);
+}
+
+.auth-form h2 {
+    display: inline-block;
+    padding: 12px 45px;
+    background: #1a1208;
+    /* Dark surface background */
+    color: var(--primary-color) !important;
+    border: 1px solid var(--primary-color);
+    border-radius: 12px;
+    margin-bottom: 25px;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.auth-form h2::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+}
+
+
+
 .back-to-home {
     position: fixed;
     top: 20px;
@@ -1637,7 +1685,9 @@ footer {
 .consignment-steps {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-}/* Trust Section Cards */
+}
+
+/* Trust Section Cards */
 .trust-card {
     background: var(--surface-color);
     padding: 40px;
@@ -2384,7 +2434,8 @@ footer {
 .auth-logo {
     margin-bottom: 30px;
     text-align: center;
-    width: 100%;
+    width: 280px;
+    height: 80px;
 }
 
 .auth-logo img {
@@ -2432,8 +2483,8 @@ footer {
 }
 
 .social-icon svg {
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
     fill: currentColor;
 }
 
@@ -2474,6 +2525,10 @@ footer {
 [data-theme="light"] .control-btn {
     background: var(--surface-color);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .control-btn:hover {
+    color: #1a1208; /* Dark text in light mode hover */
 }
 
 
