@@ -12,6 +12,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 </head>
 
 <body>
@@ -86,7 +88,7 @@
                         </div>
                     </div>
 
-                    <div class="info-card">
+                    <div class="info-card contact-form-card">
                         <form>
                             <div class="form-group">
                                 <label>Full Name</label>
@@ -115,7 +117,7 @@
                 </div>
             </div>
         </section>
-        </section>
+
 
         <!-- Global Presence Section -->
         <section class="section-padding"
@@ -203,6 +205,17 @@
                 </div>
             </div>
         </section>
+
+        <!-- Interactive Global Map -->
+        <section id="global-map-section" class="section-padding" style="background: var(--bg-color); border-top: 1px solid var(--border-color);">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: 40px;">
+                    <h2 class="serif">International Presence Map</h2>
+                    <p style="color: var(--text-muted);">Explore our secure facilities and private galleries across the globe.</p>
+                </div>
+                <div id="map" style="height: 500px; border-radius: 12px; border: 1px solid var(--primary-color); box-shadow: 0 10px 30px rgba(0,0,0,0.5); z-index: 1;"></div>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -257,10 +270,8 @@
                     <p style="color: #f5e6d3; font-size: 0.75rem; opacity: 0.7; margin-bottom: 12px;">Exclusive early
                         access to acquisitions.</p>
                     <div class="flex">
-                        <input type="email" placeholder="Email"
-                            style="background: rgba(255,255,255,0.05); border: 1px solid rgba(212, 175, 55, 0.3); padding: 8px; color: #fff; border-radius: 4px 0 0 4px; width: 100%; font-size: 0.8rem;">
-                        <button class="btn btn-primary"
-                            style="border-radius: 0 4px 4px 0; padding: 8px 15px; font-size: 0.8rem;">Join</button>
+                        <input type="email" placeholder="Email" class="footer-input">
+                        <button class="btn btn-primary footer-btn">Join</button>
                     </div>
                 </div>
             </div>
@@ -277,9 +288,97 @@
         </svg>
     </button>
 
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize the map
+            var map = L.map('map', {
+                center: [20, 10], // Centered globally
+                zoom: 2,
+                scrollWheelZoom: false
+            });
+
+            // Set tiles based on theme
+            var isDarkMode = !document.body.classList.contains('light-theme') && !document.documentElement.getAttribute('data-theme') === 'light';
+            
+            var darkTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+                subdomains: 'abcd',
+                maxZoom: 20
+            });
+
+            var lightTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+                subdomains: 'abcd',
+                maxZoom: 20
+            });
+
+            // Apply tiles
+            if (document.documentElement.getAttribute('data-theme') === 'light') {
+                lightTiles.addTo(map);
+            } else {
+                darkTiles.addTo(map);
+            }
+
+            // Locations Data
+            var locations = [
+                {
+                    name: "Zurich",
+                    coords: [47.3769, 8.5417],
+                    desc: "Global Headquarters & High-Security Alpine Vault."
+                },
+                {
+                    name: "New York",
+                    coords: [40.7818, -73.9575],
+                    desc: "Private Gallery & American Acquisitions Team."
+                },
+                {
+                    name: "London",
+                    coords: [51.5074, -0.1278],
+                    desc: "Expert Authentication Center & Auction House."
+                },
+                {
+                    name: "Tokyo",
+                    coords: [35.6762, 139.6503],
+                    desc: "Secured Asia-Pacific Collections Archive."
+                },
+                {
+                    name: "Dubai",
+                    coords: [25.2048, 55.2708],
+                    desc: "Private Client Salon & Middle East Distribution."
+                },
+                {
+                    name: "Singapore",
+                    coords: [1.3521, 103.8198],
+                    desc: "Secured Logistics Center & Multi-Asset Vault."
+                }
+            ];
+
+            // Add Markers
+            locations.forEach(function (loc) {
+                var popupContent = '<h4>' + loc.name + '</h4><p>' + loc.desc + '</p>';
+                L.marker(loc.coords).addTo(map).bindPopup(popupContent);
+            });
+
+            // Handle theme toggle (optional but recommended)
+            var themeToggle = document.getElementById('theme-toggle');
+            if (themeToggle) {
+                themeToggle.addEventListener('click', function () {
+                    setTimeout(function() {
+                        if (document.documentElement.getAttribute('data-theme') === 'light') {
+                            map.removeLayer(darkTiles);
+                            lightTiles.addTo(map);
+                        } else {
+                            map.removeLayer(lightTiles);
+                            darkTiles.addTo(map);
+                        }
+                    }, 50);
+                });
+            }
+        });
+    </script>
     <script src="js/main.js"></script>
 </body>
-
-</html>
 
 </html>
