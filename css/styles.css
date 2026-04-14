@@ -2393,6 +2393,10 @@ footer {
 }
 
 @media (max-width: 600px) {
+    .tiers-grid {
+        grid-template-columns: 1fr;
+    }
+
     .process-timeline {
         grid-template-columns: 1fr;
         gap: 30px;
