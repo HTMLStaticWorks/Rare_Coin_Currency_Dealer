@@ -514,33 +514,6 @@ h3 {
 }
 
 
-/* Specific 2x2 grid for featured sections */
-.grid-2x2 {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 1200px;
-    /* Increased from 900px */
-    margin: 0 auto;
-}
-
-@media (max-width: 768px) {
-    .grid-2x2 {
-        max-width: 100% !important;
-    }
-}
-
-@media (max-width: 1024px) {
-    .product-grid {
-        grid-template-columns: repeat(2, 1fr);
-        /* Enforce 2 columns on tablet */
-    }
-}
-
-@media (max-width: 768px) {
-    .product-grid {
-        grid-template-columns: 1fr;
-        /* 1 column on mobile */
-    }
-}
 
 .product-card {
     background: var(--surface-color);
@@ -1272,6 +1245,8 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+/* Global Grid Utilities - Moved here to ensure overrides */
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
@@ -2277,15 +2252,24 @@ footer {
     text-align: center;
     width: 100%;
     color: var(--primary-color);
-    font-size: 1.8rem;
+    font-size: 1.4rem; /* Reduced from 1.8rem */
     margin-bottom: 20px;
+    min-height: 2.8rem; /* Ensures 2 lines of text align */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .info-card p {
     text-align: center;
     width: 100%;
     color: var(--text-muted);
+    font-size: 0.9rem; /* Reduced for a cleaner look */
     line-height: 1.6;
+    min-height: 100px; /* Reduced since text is smaller */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .info-card ul {
@@ -2309,8 +2293,9 @@ footer {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     color: var(--text-muted);
+    font-size: 0.85rem; /* Reduced list item size */
 }
 
 .accent-list li img {
@@ -2919,7 +2904,7 @@ footer {
 /* Grading Page Responsive Improvements */
 .grading-services-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    /* Removed fixed 2-column layout to allow grid-1x3 utility to work */
     gap: 60px 40px;
 }
 
@@ -3094,4 +3079,63 @@ footer {
     background-color: #ffffff !important;
     color: #1a1208 !important;
     border-color: var(--accent-color);
+}
+/* Global Grid Utilities - Ultimate Priority */
+.grid-2x2 {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grid-1x3 {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+    .product-grid,
+    .gallery-grid,
+    .auction-grid,
+    .grading-services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-1x3 {
+        grid-template-columns: 1fr;
+    }
+
+    /* Center alignment for featured and auctions sections */
+    .product-card,
+    .auction-card {
+        text-align: center;
+    }
+
+    .product-info,
+    .product-footer,
+    .auction-content {
+        align-items: center;
+    }
+
+    .auctions .container > .flex {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .auctions .container > .flex .btn {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .product-grid,
+    .gallery-grid,
+    .auction-grid,
+    .grading-services-grid,
+    .grid-1x3,
+    .grid-2x2 {
+        grid-template-columns: 1fr !important;
+        max-width: 100% !important;
+    }
 }
